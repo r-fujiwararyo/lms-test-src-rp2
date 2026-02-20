@@ -53,9 +53,6 @@ public class Case02 {
 	@DisplayName("テスト02 DBに登録されていないユーザーでログイン")
 	void test02() {
 
-		//		指定のURLの画面を開く
-		goTo("http://localhost:8080/lms");
-
 		WebElement loginId = webDriver.findElement(By.id("loginId"));
 		loginId.clear();
 		loginId.sendKeys("test1");
