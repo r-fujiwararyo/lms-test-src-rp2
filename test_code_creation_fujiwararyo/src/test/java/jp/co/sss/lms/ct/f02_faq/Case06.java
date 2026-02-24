@@ -1,11 +1,11 @@
 package jp.co.sss.lms.ct.f02_faq;
 
 import static jp.co.sss.lms.ct.util.WebDriverUtils.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.Duration;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -140,7 +140,7 @@ public class Case06 {
 		String display = webDriver.findElement(By.className("fs18")).getText();
 
 		// 部分一致の判定
-		Assert.assertTrue("受講者の退職や解雇", true);
+		assertTrue("受講者の退職や解雇", true);
 		getEvidence(new Object() {
 		});
 	}

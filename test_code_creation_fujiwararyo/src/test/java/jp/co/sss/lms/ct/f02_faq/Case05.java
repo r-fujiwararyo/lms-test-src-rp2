@@ -1,11 +1,11 @@
 package jp.co.sss.lms.ct.f02_faq;
 
 import static jp.co.sss.lms.ct.util.WebDriverUtils.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.Duration;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -14,7 +14,6 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -134,7 +133,7 @@ public class Case05 {
 
 		String serch = webDriver.findElement(By.className("mb10")).getText();
 		// 部分一致の判定
-		Assert.assertTrue("研修", true);
+		assertTrue("研修", true);
 		getEvidence(new Object() {
 		});
 	}
@@ -143,10 +142,9 @@ public class Case05 {
 	@Order(6)
 	@DisplayName("テスト06 「クリア」ボタン押下で入力したキーワードを消去")
 	void test06() {
-		JavascriptExecutor javascript = (JavascriptExecutor) webDriver;
-
-		// 上に500ピクセルスクロールする
-		javascript.executeScript("window.scrollBy(0,-500);");
+		
+		//	上に500ピクセルスクロールする
+		scrollTo("-500");
 
 		WebElement clearElement = webDriver.findElement(By.className("col-lg-10"));
 		webDriver.findElement(By.cssSelector("input[value='クリア']")).click();
