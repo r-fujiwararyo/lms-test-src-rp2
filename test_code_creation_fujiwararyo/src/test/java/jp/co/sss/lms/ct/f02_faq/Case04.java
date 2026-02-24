@@ -109,6 +109,7 @@ public class Case04 {
 		//		指定した要素が画面上に表示されるまで待つ 
 		final WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.titleIs("よくある質問 | LMS"));
+		assertEquals("よくある質問 | LMS", webDriver.getTitle());
 		getEvidence(new Object() {
 		});
 	}
